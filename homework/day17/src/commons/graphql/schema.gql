@@ -1,0 +1,54 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ProductCart {
+  id: String!
+}
+
+type ProductDetail {
+  id: String!
+  season: String!
+  gender: String!
+  size: String!
+  origin: String!
+  stock: Int!
+}
+
+type ProductMainCategory {
+  id: String!
+  maincategory: String!
+}
+
+type Product {
+  id: String!
+  name: String!
+  description: String!
+  price: Int!
+  isSoldout: Boolean!
+  productMainCategory: ProductMainCategory!
+  productDetail: ProductDetail!
+  productCart: ProductCart!
+}
+
+type Query {
+  fetchProducts: [Product!]!
+  fetchProduct(productId: String!): Product!
+}
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(productId: String!, updateProductInput: UpdateProductInput!): Product!
+}
+
+input CreateProductInput {
+  name: String!
+  description: String!
+  price: Int!
+}
+
+input UpdateProductInput {
+  name: String
+  description: String
+  price: Int
+}

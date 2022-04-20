@@ -1,0 +1,101 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: String!
+  email: String!
+  phone: String!
+  address: String!
+  person: String!
+}
+
+type ProductDetail {
+  id: String!
+  season: String!
+  gender: String!
+  size: String!
+  origin: String!
+  stock: Int!
+}
+
+type ProductMainCategory {
+  id: String!
+  maincategory: String!
+}
+
+type ProductCart {
+  id: String!
+}
+
+type Product {
+  id: String!
+  name: String!
+  description: String!
+  price: Int!
+  isSoldout: Boolean!
+  productMainCategory: ProductMainCategory!
+  productDetail: ProductDetail!
+  productCart: ProductCart!
+  productOrder: ProductOrder!
+}
+
+type ProductOrder {
+  id: String!
+  delivery: String!
+  invoicenumber: String!
+  address: String!
+  deliverycompany: String!
+  productCart: ProductCart!
+  user: User!
+  products: [Product!]!
+}
+
+type Query {
+  fetchProducts: [Product!]!
+  fetchProduct(productId: String!): Product!
+  checkUser: User!
+  fetchUser: String!
+}
+
+type Mutation {
+  login(email: String!, pw: String!): String!
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(productId: String!, updateProductInput: UpdateProductInput!): Product!
+  deleteProduct(productId: String!): Boolean!
+  createUser(email: String!, pw: String!, phone: String!, address: String!, person: String!): User!
+  updateUser(pw: String!): String!
+  deleteUser: Boolean!
+}
+
+input CreateProductInput {
+  name: String!
+  description: String!
+  price: Int!
+  productMainCategory: ProductMainCategoryInput!
+  productDetail: ProductDetailInput!
+  productCartId: String!
+  productOrder: [String!]!
+}
+
+input ProductMainCategoryInput {
+  maincategory: String!
+}
+
+input ProductDetailInput {
+  season: String!
+  gender: String!
+  size: String!
+  origin: String!
+  stock: Int!
+}
+
+input UpdateProductInput {
+  name: String
+  description: String
+  price: Int
+  productMainCategory: ProductMainCategoryInput
+  productDetail: ProductDetailInput
+  productCartId: String
+  productOrder: [String!]
+}
