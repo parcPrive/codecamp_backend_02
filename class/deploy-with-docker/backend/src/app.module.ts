@@ -33,7 +33,7 @@ import { FileModule } from './apis/file/file.module';
       //host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '',
+      password: 'root',
       //database: 'homework2',
       database: 'mydocker02',
       entities: [__dirname + '/apis/**/*.entity.*'],
