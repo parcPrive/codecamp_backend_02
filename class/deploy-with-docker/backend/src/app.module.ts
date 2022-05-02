@@ -37,7 +37,7 @@ import { FileModule } from './apis/file/file.module';
       password: 'root',
       //database: 'homework2',
       //database: 'mydocker02',
-      databas: 'myserver02',
+      database: 'myserver02',
       entities: [__dirname + '/apis/**/*.entity.*'],
       synchronize: true,
       logging: true,
