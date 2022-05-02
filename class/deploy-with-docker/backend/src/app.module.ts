@@ -29,8 +29,8 @@ import { FileModule } from './apis/file/file.module';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'my-database',
-      //host: '10.62.160.4',
+      //host: 'my-database',
+      host: '10.62.160.4',
       //host: 'localhost',
       port: 3306,
       username: 'root',
