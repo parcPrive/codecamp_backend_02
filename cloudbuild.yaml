@@ -1,4 +1,4 @@
-setps:
+steps:
   # 1단계 => docker-compose -f docker-compose.prod.yaml build
   - name: docker/compose:1.29.0
     args:
@@ -22,7 +22,7 @@ setps:
       - set
       - image
       - deployment/my-backend-02
-      - my-backend02-sha256-1=asia.gcr.io/engaged-proxy-347011/my-backend02:5.4
+      - my-backend02-sha256-1=asia.gcr.io/engaged-proxy-347011/my-backend02:5.5
     env:
       - CLOUDSDK_COMPUTE=asia-northeast3
       - CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-02-1
