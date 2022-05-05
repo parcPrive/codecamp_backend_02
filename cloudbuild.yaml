@@ -3,7 +3,7 @@ setps:
   - name: docker/compose:1.29.0
     args:
       - -f
-      - docker-compose.prod.yaml
+      - class/deploy-with-docker/backend/docker-compose.prod.yaml
       - build
 
 
@@ -13,7 +13,7 @@ setps:
   - name: docker/compose:1.29.0
   args:
     - -f
-    - docker-compose.prod.yaml
+    - class/deploy-with-docker/backend/docker-compose.prod.yaml
 
   
   # 3단계 => kubectl set image deployment/my-backend-02 my-backend02-sha256-1=asia.gcr.io/engaged-proxy-347011/my-backend02:5.3
@@ -22,7 +22,7 @@ setps:
       - set
       - image
       - deployment/my-backend-02
-      - my-backend02-sha256-1=asia.gcr.io/engaged-proxy-347011/my-backend02:5.3
+      - my-backend02-sha256-1=asia.gcr.io/engaged-proxy-347011/my-backend02:5.4
     env:
       - CLOUDSDK_COMPUTE=asia-northeast3
       - CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-02-1
