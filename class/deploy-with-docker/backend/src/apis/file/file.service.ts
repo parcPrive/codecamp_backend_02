@@ -7,7 +7,10 @@ interface IFile {
 @Injectable()
 export class FileService {
   async upload({ files }: IFile) {
-    const storage = new Storage({}).bucket('moki');
+    const storage = new Storage({
+      keyFilename: '/my-secret/gcp-file-storage.json',
+      projectId: 'engaged-proxy-347011',
+    }).bucket('moki');
     // 일단 먼저 다 받기
     console.log(storage);
 

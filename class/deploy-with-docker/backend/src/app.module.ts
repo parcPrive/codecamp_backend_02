@@ -9,6 +9,8 @@ import { UserModule } from './apis/users/user.module';
 import { AuthModule } from './apis/auth/auth.module';
 import { PointTransactionModule } from './apis/pointTransaction/pointTransaction.module';
 import { FileModule } from './apis/file/file.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 // import { AppController } from './app.controller';
 // import { AppService } from './app.service';
@@ -30,22 +32,22 @@ import { FileModule } from './apis/file/file.module';
     TypeOrmModule.forRoot({
       type: 'mysql',
       //host: 'my-database',
-      // host: '10.62.160.6',
-      host: 'my-database-02',
+      host: '10.62.160.6',
+      //host: 'my-database-02',
       //host: 'localhost',
       port: 3306,
       username: 'root',
       password: 'root',
       //database: 'homework2',
       //database: 'mydocker02',
-      //database: 'myserver02',
-      database: 'mypod02',
+      database: 'myserver02',
+      //database: 'mypod02',
       entities: [__dirname + '/apis/**/*.entity.*'],
       synchronize: true,
       logging: true,
     }),
   ],
-  // controllers: [AppController],
-  // providers: [AppService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
